@@ -42,6 +42,12 @@ public class StorageFile {
             super(message);
         }
     }
+    
+    public static class NoStorageFileException extends Exception {
+    	public NoStorageFileException(String message) {
+    		super(message);
+    	}
+    }
 
     private final JAXBContext jaxbContext;
 
