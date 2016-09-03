@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.person.Name;
-import seedu.addressbook.parser.Parser;
 
 import static org.junit.Assert.*;
 
@@ -23,4 +22,11 @@ public class NameTest {
 			e.printStackTrace();
 		}
     }
+	
+	// Able to handle null input
+	@Test
+	public void nullShouldReturnFlase() {
+		assertEquals(false, testName.isSimilar(null));
+	}
+	
 }
