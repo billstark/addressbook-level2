@@ -29,6 +29,7 @@ public class NameTest {
 			longName = new Name("Smith John K B");
 			allUpperCaseName = new Name("JOHN K SMITH");
 			allLowerCaseName = new Name("john k smith");
+			notSameName = new Name("Jon Snow");
 		} catch (IllegalValueException e) {
 			e.printStackTrace();
 		}
@@ -55,5 +56,9 @@ public class NameTest {
 		assertEquals(true, testName.isSimilar(allUpperCaseName));
 	}
 	
-
+	// Differentiate a different name
+	@Test
+	public void differentShouldReturnFlase() {
+		assertEquals(false, testName.isSimilar(notSameName));
+	}
 }
