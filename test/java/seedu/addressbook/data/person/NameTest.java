@@ -27,6 +27,8 @@ public class NameTest {
 			disorderedName = new Name("Smith K John");
 			shortName = new Name("Smith K");
 			longName = new Name("Smith John K B");
+			allUpperCaseName = new Name("JOHN K SMITH");
+			allLowerCaseName = new Name("john k smith");
 		} catch (IllegalValueException e) {
 			e.printStackTrace();
 		}
@@ -46,9 +48,12 @@ public class NameTest {
 		assertEquals(true, testName.isSimilar(shortName));
 	}
 	
+	// Able to check word cases
 	@Test
 	public void shortShouldReturnTrue() {
-		
+		assertEquals(true, testName.isSimilar(allLowerCaseName));
+		assertEquals(true, testName.isSimilar(allUpperCaseName));
 	}
 	
+
 }

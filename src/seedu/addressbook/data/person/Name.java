@@ -54,10 +54,11 @@ public class Name {
     		 return false;
     	 }
     	 
-    	 // Splits name components
-    	 List<String> thisNameComponents = Arrays.asList(fullName.split("\\ "));
-    	 List<String> otherNameComponents = Arrays.asList(other.fullName.split("\\ "));
+    	 // Splits name components (all in lower case)
+    	 List<String> thisNameComponents = Arrays.asList(fullName.toLowerCase().split("\\ "));
+    	 List<String> otherNameComponents = Arrays.asList(other.fullName.toLowerCase().split("\\ "));
     	 
+    	 // Checks name order
     	 if(thisNameComponents.size() > otherNameComponents.size()) {
     		 otherNameComponents.retainAll(thisNameComponents);
     		 if(!otherNameComponents.isEmpty()) return true;
