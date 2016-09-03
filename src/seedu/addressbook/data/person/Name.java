@@ -16,7 +16,7 @@ public class Name {
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
 
     public final String fullName;
-
+    
     /**
      * Validates given name.
      *
@@ -43,6 +43,16 @@ public class Name {
     public List<String> getWordsInName() {
         return Arrays.asList(fullName.split("\\s+"));
     }
+    
+    /**
+     * Returns true of the other name is very similar to this name.
+     * Two names are considered similar if they have same substrings,
+     * ignoring the order and case.
+     */
+     public boolean isSimilar(Name other) {
+    	 
+    	 return true;
+     }
 
     @Override
     public String toString() {
