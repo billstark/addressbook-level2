@@ -52,8 +52,20 @@ public class Name {
      public boolean isSimilar(Name other) {
     	 if(other == null) {
     		 return false;
-    	 } 
-    	 return true;
+    	 }
+    	 
+    	 // Splits name components
+    	 List<String> thisNameComponents = Arrays.asList(fullName.split("\\ "));
+    	 List<String> otherNameComponents = Arrays.asList(other.fullName.split("\\ "));
+    	 
+    	 if(thisNameComponents.size() > otherNameComponents.size()) {
+    		 otherNameComponents.retainAll(thisNameComponents);
+    		 if(!otherNameComponents.isEmpty()) return true;
+    	 } else {
+    		 thisNameComponents.retainAll(otherNameComponents);
+    		 if(!thisNameComponents.isEmpty()) return true;
+    	 }
+    	 return false;
      }
 
     @Override
